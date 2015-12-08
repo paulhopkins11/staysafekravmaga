@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name staySafeApp.controller:MainCtrl
+ * @name staySafeApp.controller:KidsParQCtrl
  * @description
- * # MainCtrl
+ * # KidsParQCtrl
  * Controller of the staySafeApp
  */
 angular.module('staySafeApp')
-  .controller('MainCtrl', function () {
+  .controller('KidsParQCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

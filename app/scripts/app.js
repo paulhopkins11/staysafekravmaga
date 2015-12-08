@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name paulApp
+ * @name staySafeApp
  * @description
- * # paulApp
+ * # staySafeApp
  *
  * Main module of the application.
  */
 angular
-  .module('paulApp', [
+  .module('staySafeApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -24,10 +24,20 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/listParQs', {
+        templateUrl: 'views/listParQs.html',
+        controller: 'ListParQCtrl',
+        controllerAs: 'listParQ'
+      })
+      .when('/adultParQ', {
+    	  templateUrl: 'views/adultParQ.html',
+    	  controller: 'AdultParQCtrl',
+    	  controllerAs: 'adultParQ'
+      })
+      .when('/kidsParQ', {
+    	  templateUrl: 'views/kidsParQ.html',
+    	  controller: 'KidsParQCtrl',
+    	  controllerAs: 'kidsParQ'
       })
       .otherwise({
         redirectTo: '/'

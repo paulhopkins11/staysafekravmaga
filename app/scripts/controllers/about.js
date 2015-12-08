@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name paulApp.controller:AboutCtrl
+ * @name staySafeApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the paulApp
+ * Controller of the staySafeApp
  */
-angular.module('paulApp')
+angular.module('staySafeApp')
   .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

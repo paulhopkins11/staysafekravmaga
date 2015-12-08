@@ -48,10 +48,10 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      compass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer:server']
-      },
+//      compass: {
+//        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+//        tasks: ['compass:server', 'autoprefixer:server']
+//      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -208,33 +208,33 @@ module.exports = function (grunt) {
     },
 
     // Compiles Sass to CSS and generates necessary files if requested
-    compass: {
-      options: {
-        sassDir: '<%= yeoman.app %>/styles',
-        cssDir: '.tmp/styles',
-        generatedImagesDir: '.tmp/images/generated',
-        imagesDir: '<%= yeoman.app %>/images',
-        javascriptsDir: '<%= yeoman.app %>/scripts',
-        fontsDir: '<%= yeoman.app %>/styles/fonts',
-        importPath: './bower_components',
-        httpImagesPath: '/images',
-        httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/styles/fonts',
-        relativeAssets: false,
-        assetCacheBuster: false,
-        raw: 'Sass::Script::Number.precision = 10\n'
-      },
-      dist: {
-        options: {
-          generatedImagesDir: '<%= yeoman.dist %>/images/generated'
-        }
-      },
-      server: {
-        options: {
-          sourcemap: true
-        }
-      }
-    },
+//    compass: {
+//      options: {
+//        sassDir: '<%= yeoman.app %>/styles',
+//        cssDir: '.tmp/styles',
+//        generatedImagesDir: '.tmp/images/generated',
+//        imagesDir: '<%= yeoman.app %>/images',
+//        javascriptsDir: '<%= yeoman.app %>/scripts',
+//        fontsDir: '<%= yeoman.app %>/styles/fonts',
+//        importPath: './bower_components',
+//        httpImagesPath: '/images',
+//        httpGeneratedImagesPath: '/images/generated',
+//        httpFontsPath: '/styles/fonts',
+//        relativeAssets: false,
+//        assetCacheBuster: false,
+//        raw: 'Sass::Script::Number.precision = 10\n'
+//      },
+//      dist: {
+//        options: {
+//          generatedImagesDir: '<%= yeoman.dist %>/images/generated'
+//        }
+//      },
+//      server: {
+//        options: {
+//          sourcemap: true
+//        }
+//      }
+//    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -352,7 +352,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'paulApp',
+          module: 'staySafeApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },
@@ -420,13 +420,13 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'compass:server'
+//        'compass:server'
       ],
       test: [
-        'compass'
+//        'compass'
       ],
       dist: [
-        'compass:dist',
+//        'compass:dist',
         'imagemin',
         'svgmin'
       ]
@@ -488,6 +488,23 @@ module.exports = function (grunt) {
     'usemin',
     'htmlmin'
   ]);
+  grunt.registerTask('debug', [
+                               'clean:dist',
+                               'wiredep',
+                               'useminPrepare',
+                               'concurrent:dist',
+                               'autoprefixer',
+                               'ngtemplates',
+                               'concat',
+                               'ngAnnotate',
+                               'copy:dist',
+                               'cdnify',
+                               'cssmin',
+    'uglify',
+                               'filerev',
+    'usemin',
+                               'htmlmin'
+                               ]);
 
   grunt.registerTask('default', [
     'newer:jshint',
