@@ -1,1 +1,21 @@
 <p>List PAR-Qs to upload</p>
+
+<!-- <div ng-repeat="parq in parqs track by $index"> -->
+<!--   {{parq.firstname}} {{parq.surname}} -->
+<!-- </div> -->
+
+                        <table class="table table-hover">
+                            <tr
+                                ng-repeat="parq in parqs track by $index | orderBy:'surname'">
+                                <td>{{parq.firstname}}</td>
+                                <td>{{parq.surname}}</td>
+<!--                                 <td><a class="button" -->
+<!--                                     href="geoserver/layerGroup/{{layerGroup.name}}.xml?endPoint={{serverEncoded}}&urlEncoded=true" -->
+<!--                                     target="_"><span class="glyphicon glyphicon-save" -->
+<!--                                         aria-hidden="true" popover="Download {{layerGroup.name}}.xml" -->
+<!--                                         popover-trigger="mouseenter" style="cursor: pointer"></span></a></td> -->
+                                <td><button ng-click="removeParQ(parq)">Delete</button></td>
+                                <td><button ng-click="upload(parq)">Upload</button></td>
+                            </tr>
+                        </table>
+
