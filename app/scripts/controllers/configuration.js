@@ -2,19 +2,19 @@
 
 /**
  * @ngdoc function
- * @name staySafeApp.controller:AdultParQCtrl
+ * @name staySafeApp.controller:ConfigurationCtrl
  * @description
- * # AdultParQCtrl
+ * # ConfigurationCtrl
  * Controller of the staySafeApp
  */
 angular.module('staySafeApp')
-  .controller('ConfigurationCtrl', ['$scope','ConfigurationService', function ($scope,ConfigurationService) {
+  .controller('ConfigurationCtrl', ['$log','$scope','ConfigurationService', function ($log, $scope, ConfigurationService) {
 	  $scope.reset = function() {
 		  ConfigurationService.removeConfiguration();	  
-		  $scope.configuration = ConfigurationService.getConfiguration();
-	  }
-	  $scope.configuration = ConfigurationService.getConfiguration();
+		  $scope.settings = ConfigurationService.getConfiguration();
+	  };
+	  $scope.settings = ConfigurationService.getConfiguration();
 	  $scope.save = function() {
-		  ConfigurationService.setConfiguration($scope.configuration);
-	  }
+		  ConfigurationService.setConfiguration($scope.settings);
+	  };
   }]);

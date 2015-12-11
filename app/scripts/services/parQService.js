@@ -3,8 +3,7 @@
 angular.module('staySafeApp').factory('ParQService', [ '$log', 'localStorageService', function($log, $localStorage) {
 	var parQService = {};
 
-	var parqs = $localStorage.get('parqs');
-	if (!parqs) {
+	if (!$localStorage.get('parqs')) {
 		$localStorage.set('parqs',[]);
 	}
 

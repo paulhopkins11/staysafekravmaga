@@ -14,9 +14,9 @@ angular.module('staySafeApp')
 				  surname:'NE',
 				  email: 'N@W',
 				  dob: '01/02/99' };		  
-	  }
+	  };
 	  $scope.parq = $scope.reset();
 	  $scope.save = function() {
 		  ParQService.addParQ($scope.parq);
-	  }
+	  };
   }]);
