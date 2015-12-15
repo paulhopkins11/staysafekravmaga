@@ -1,21 +1,150 @@
-<p>Adult PAR-Q</p>
+<h1>Adult PAR-Q</h1>
+<h2>Participant Information</h2>
 <form>
-  <div class="form-group">
-    <label for="firstName">First Name</label>
-    <input type="text" class="form-control" id="firstName" ng-model="parq.firstname" placeholder="First Name">
-  </div>
-  <div class="form-group">
-    <label for="surname">Surname</label>
-    <input type="text" class="form-control" id="surname" ng-model="parq.surname" placeholder="Surname">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" ng-model="parq.email" placeholder="Email">
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
-  <button type="submit" ng-click="save()" class="btn btn-default">Submit</button>
+	<div class="form-group">
+		<label for="firstName">First Name</label> <input type="text"
+			class="form-control" id="firstName" ng-model="parq.firstname"
+			placeholder="First Name">
+	</div>
+	<div class="form-group">
+		<label for="surname">Surname</label> <input type="text"
+			class="form-control" id="surname" ng-model="parq.surname"
+			placeholder="Surname">
+	</div>
+	<div class="form-group">
+		<label for="address">Address</label> <input type="text"
+			class="form-control" id="address" ng-model="parq.address"
+			placeholder="Address">
+	</div>
+	<div class="form-group">
+		<label for="postcode">Postcode</label> <input type="text"
+			class="form-control" id="postcode" ng-model="parq.postcode"
+			placeholder="Postcode">
+	</div>
+	<div class="form-group">
+		<label for="homephone">Home Phone Number</label> <input type="text"
+			class="form-control" id="homephone" ng-model="parq.homephone"
+			placeholder="Home Phone Number">
+	</div>
+	<div class="form-group">
+		<label for="mobile">Mobile Phone Number</label> <input type="text"
+			class="form-control" id="mobile" ng-model="parq.mobile"
+			placeholder="Mobile Phone Number">
+	</div>
+	<div class="form-group">
+		<label for="dob">Date Of Birth</label> <input type="text"
+			class="form-control" id="dob" ng-model="parq.dob"
+			placeholder="Date of Birth">
+	</div>
+	<div class="form-group">
+		<label for="exampleInputEmail1">Email Address</label> <input
+			type="email" class="form-control" id="exampleInputEmail1"
+			ng-model="parq.email" placeholder="Email">
+	</div>
+	<div class="form-group">
+		<label for="emergencycontact">Emergency Contact Name</label> <input
+			type="text" class="form-control" id="emergencycontact"
+			ng-model="parq.emergencycontact" placeholder="">
+	</div>
+	<div class="form-group">
+		<label for="emergencynumber">Emergency Contact Number</label> <input
+			type="text" class="form-control" id="emergencynumber"
+			ng-model="parq.emergencynumber" placeholder="">
+	</div>
+	<div class="form-group">
+		<label for="howhear">How did you hear about us</label> <input
+			type="text" class="form-control" id="howhear" ng-model="parq.howhear"
+			placeholder="">
+	</div>
+	<hr />
+	<h2>Physical Activity Readiness Questionnaire</h2>
+
+	<h4>Please be aware that all information on completed forms will
+		be confidential</h4>
+
+	<h4>If you select any of the boxes below you must have your
+		doctor’s consent before you take part in any physical activity on this
+		course. You will be required to provide a doctor’s consent letter,
+		which you must bring with you on the first day of the course.</h4>
+
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q1_heart">
+			Has your doctor ever said that you have a heart condition and
+			recommended only medically supervised activity?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q2_chest">
+			Do you have chest pain brought on by physical activity?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q3_chestmonth">
+			Have you developed chest pain in the last month?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q4_dizzy">
+			Do you tend to lose consciousness or fall over as a result of
+			dizziness?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q5_bone">
+			Do you have a bone or joint problem that could be aggravated by the
+			proposed physical activity?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q6_blood">
+			Has a doctor ever recommended medication for your blood pressure or a
+			heart condition?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q7_supervision">
+			Are you aware, through your own experience or from a doctor’s advice,
+			of any other physical reason why you should not exercise without
+			medical supervision?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q8_pregnant">
+			Are you currently, or have you been pregnant in the last six months?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q9_additional">
+			Is there any additional information the instructor should be aware
+			of?</label>
+	</div>
+
+	<hr />
+	<h2>Informed Consent</h2>
+
+	<h4>All exercises and workshop activities are designed to enable
+		students to experience different levels of intensity and duration of
+		activities. As a result, some individuals may experience different
+		feelings of load in their muscles and varying breathing patterns. Some
+		individuals may become hot and somewhat uncomfortable as they take
+		part in activities that are either new to them or they are less
+		familiar with.</h4>
+	<h4>Each workshop activity is designed to be safe and effective
+		and to minimise any risk of injury.</h4>
+	<h4>If you feel any pain or discomfort at any time, stop doing the
+		activity concerned and inform the Instructor. If you have any reason
+		that you believe means that you should not perform any of the
+		activities you are asked to do; do not perform that activity and
+		inform the Instructor of your decision and the reasons.</h4>
+	<h4>The training program has been explained to me and I am willing
+		to take part.</h4>
+	<h4>Of course, I understand that I may withdraw my participation
+		at any time.</h4>
+	<hr />
+	<h2>Signature</h2>
+
+	<h4>Please enter a secret word that will be able to confirm that
+		it was you that answered these questions, for example your mothers maiden name. This will not be displayed.
+		</h4>
+
+	<div class="form-group">
+		<label for="secret">Secret Word</label> <input type="password"
+			class="form-control" id="secret" ng-model="parq.secret"
+			placeholder="">
+	</div>
+	<hr />
+
+	<button type="submit" ng-click="save()" class="btn btn-default">I {{parq.firstname}} {{parq.surname}} confirm that this information I have given is correct</button>
 </form>

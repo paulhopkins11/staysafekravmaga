@@ -8,15 +8,18 @@ angular.module('staySafeApp').factory('UploadService', [ '$log', '$http', 'ParQS
 		var url = 'http://staySafeKravMaga.com/parq/saveParQ.php';
 		var request = {
 				'settings': settings,
-				'parq': newParQ};
+				'parq': newParQ
+				};
 
 		$http
 				.post(url, request)
+//						, {
+//				    headers: {'Authorization': 'Basic cGhvcGtpbnM6cGF1bHNwYXNzOTk='}
+//				})
 				.success(
 						function(data, status, headers,
 								config) {
-							$log
-									.info('Upload successful');
+							$log.info('Upload successful');
 							$log.info(data);
 							// On success
 //							ParQService.removeParQ(newParQ);

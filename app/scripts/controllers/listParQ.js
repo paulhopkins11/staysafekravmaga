@@ -12,6 +12,7 @@ angular.module('staySafeApp')
 	  $scope.parqs = ParQService.getParQs();
 	  $scope.removeParQ = function(parq) {
 		  ParQService.removeParQ(parq);
+		  $scope.parqs = ParQService.getParQs();
 	  };
 	  $scope.uploadParQ = function(parq) {
 		  UploadService.uploadParQ(parq);

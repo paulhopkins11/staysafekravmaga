@@ -12,8 +12,27 @@ angular.module('staySafeApp')
 	  $scope.reset = function() {
 		  return {firstname:'NEW',
 				  surname:'NE',
+				  date: new Date(),
+				  address: '',
+				  postcode: '',
+				  homephone: '',
+				  mobilephone: '',
 				  email: 'N@W',
-				  dob: '01/02/99' };		  
+				  dob: '',
+				  emergencycontact: '',
+				  emergencynumber: '',
+				  howhear: '',
+				  q1_heart: '',
+				  q2_chest: '',
+				  q3_chestmonth: '',
+				  q4_dizzy: '',
+				  q5_bone: '',
+				  q6_blood: '',
+				  q7_supervision: '',
+				  q8_pregnant: '',
+				  q9_additional: '',
+				  secret: ''
+				  };		  
 	  };
 	  $scope.parq = $scope.reset();
 	  $scope.save = function() {
