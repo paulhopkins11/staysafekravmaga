@@ -8,16 +8,16 @@
  * Controller of the staySafeApp
  */
 angular.module('staySafeApp')
-  .controller('AdultParQCtrl', ['$scope','ParQService', function ($scope,ParQService) {
+  .controller('AdultParQCtrl', ['$scope', '$routeParams', '$location', 'ParQService', function ($scope, $routeParams, $location, ParQService) {
 	  $scope.reset = function() {
-		  return {firstname:'NEW',
-				  surname:'NE',
+		  return {firstname:'',
+				  surname:'',
 				  date: new Date(),
 				  address: '',
 				  postcode: '',
 				  homephone: '',
 				  mobilephone: '',
-				  email: 'N@W',
+				  email: '',
 				  dob: '',
 				  emergencycontact: '',
 				  emergencynumber: '',
@@ -34,8 +34,21 @@ angular.module('staySafeApp')
 				  secret: ''
 				  };		  
 	  };
-	  $scope.parq = $scope.reset();
+	  $scope.firstname = $routeParams.firstname;
+	  $scope.surname = $routeParams.surname;
+	  if ($scope.firstname && $scope.surname) {
+		  $scope.parq = ParQService.getParQ($scope.firstname, $scope.surname);
+	  }
+	  else {
+		  $scope.parq = $scope.reset();
+	  }
 	  $scope.save = function() {
-		  ParQService.addParQ($scope.parq);
+		  if ($scope.firstname && $scope.surname) {
+			  ParQService.updateParQ($scope.parq);
+		  }
+		  else {
+			  ParQService.addParQ($scope.parq);
+		  }
+		  $location.path( "#/listParQs" );
 	  };
   }]);

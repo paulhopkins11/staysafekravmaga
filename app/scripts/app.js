@@ -35,6 +35,11 @@ var app = angular
     	  controller: 'ListParQCtrl',
     	  controllerAs: 'listParQ'
       })
+      .when('/adultParQ/:firstname/:surname', {
+    	  templateUrl: 'views/adultParQ.html',
+    	  controller: 'AdultParQCtrl',
+    	  controllerAs: 'adultParQ'
+      })
       .when('/adultParQ', {
     	  templateUrl: 'views/adultParQ.html',
     	  controller: 'AdultParQCtrl',

@@ -15,21 +15,34 @@ angular.module('staySafeApp').factory(
 					parQService.addParQ = function(newParQ) {
 						var parqs = $localStorage.get('parqs');
 						parqs.push(newParQ);
-						$localStorage.set('parqs', parqs);
+						parQService.saveParQs(parqs);
 					};
-					parQService.removeParQ = function(parQ) {
-						var parqs = $localStorage.get('parqs');
-						var index = parqs.indexOf(parQ);
-						if (index > -1) {
-							$localStorage.get('parqs').splice(index, 1);
-						}
+					parQService.saveParQs = function(parqs) {
 						$localStorage.set('parqs', parqs);
 					};
 
 					parQService.getParQs = function() {
-						$log.log('Storage type is '
-								+ $localStorage.getStorageType());
 						return $localStorage.get('parqs');
+					};
+					parQService.getParQ = function(firstname, surname) {
+						var parqs = parQService.getParQs();
+						for (var index = 0; index < parqs.length; ++index) {
+						    if (parqs[index].firstname==firstname && parqs[index].surname==surname) {
+						    	return parqs[index];
+						    }
+						}
+						return null;
+					};
+					parQService.updateParQ = function(parq) {
+						var parqs = parQService.getParQs();
+						for (var index = 0; index < parqs.length; ++index) {
+							if (parqs[index].firstname==parq.firstname && parqs[index].surname==parq.surname) {
+								parqs.splice(index, 1);
+								parqs.push(parq);
+								parQService.saveParQs(parqs)
+								return;
+							}
+						}
 					};
 
 					return parQService;

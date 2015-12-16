@@ -14,8 +14,9 @@
 <!--                                     target="_"><span class="glyphicon glyphicon-save" -->
 <!--                                         aria-hidden="true" popover="Download {{layerGroup.name}}.xml" -->
 <!--                                         popover-trigger="mouseenter" style="cursor: pointer"></span></a></td> -->
-                                <td><button ng-click="removeParQ(parq)">Delete</button></td>
-                                <td><button ng-click="uploadParQ(parq)">Upload</button></td>
+                                <td><button class="btn btn-default btn-sm" ng-click="removeParQ(parq)">Delete</button></td>
+                                <td><a class="btn btn-default btn-sm" href="#/adultParQ/{{parq.firstname}}/{{parq.surname}}">Edit</a></td>
+                                <td><button class="btn btn-default btn-sm" ng-click="uploadParQ(parq)">Upload</button></td>
                             </tr>
                         </table>
 
