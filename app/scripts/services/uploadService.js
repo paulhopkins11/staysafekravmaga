@@ -3,7 +3,7 @@
 angular.module('staySafeApp').factory('UploadService', [ '$log', '$http', 'ParQService', 'ConfigurationService', function($log, $http, ParQService, ConfigurationService) {
 	var uploadService = {};
 
-	uploadService.uploadParQ = function(newParQ) {
+	uploadService.uploadParQ = function(newParQ, success, failure) {
 		var settings = ConfigurationService.getConfiguration();
 		var url = 'http://staySafeKravMaga.com/parq/saveParQ.php';
 		var request = {
@@ -23,12 +23,14 @@ angular.module('staySafeApp').factory('UploadService', [ '$log', '$http', 'ParQS
 							$log.info(data);
 							// On success
 //							ParQService.removeParQ(newParQ);
+							success();
 						})
 				.error(
 						function(data, status, headers,
 								config) {
 							$log.info('Upload failed');
 							$log.info(data);
+							failure();
 //							$scope.data = data
 //									|| "Request failed";
 //							$scope.status = status;

@@ -17,8 +17,23 @@ angular.module('staySafeApp')
 			}
 		  ParQService.saveParQs($scope.parqs);
 	  };
+	  $scope.clearUpload = function() {
+		  $scope.uploadFailed = null;
+		  $scope.uploadSuccess = null;		  
+	  }
 	  $scope.uploadParQ = function(parq) {
-		  UploadService.uploadParQ(parq);
+		  $scope.uploading = 'Uploading ' + parq.firstname + ' ' + parq.surname;
+		  UploadService.uploadParQ(parq, function() {
+			  $scope.uploading = false;
+				// Success
+			  $scope.uploadFailed = null;
+			  $scope.uploadSuccess = ' Successfully uploaded ' + parq.firstname + ' ' + parq.surname;
+		  }, function() {
+			  $scope.uploading = false;
+				// Failure
+			  $scope.uploadSuccess = null;
+			  $scope.uploadFailed = ' Failed to upload ' + parq.firstname + ' ' + parq.surname;
+		  });
 	  };
 	  
 	  }]);
