@@ -10,11 +10,11 @@
 angular.module('staySafeApp')
 .controller('KidsParQCtrl', ['$scope', '$routeParams', '$location', 'ParQService', function ($scope, $routeParams, $location, ParQService) {
 	  $scope.reset = function() {
-		  return {firstname:'',
-				  surname:'',
+		  return {firstname: '',
+				  surname: '',
 				  date: new Date(),
-				  parent-firstname:'',
-				  parent-surname:'',
+				  parent_firstname: '',
+				  parent_surname:'',
 				  address: '',
 				  postcode: '',
 				  homephone: '',
