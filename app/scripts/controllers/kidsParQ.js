@@ -10,7 +10,8 @@
 angular.module('staySafeApp')
 .controller('KidsParQCtrl', ['$scope', '$routeParams', '$location', 'ParQService', function ($scope, $routeParams, $location, ParQService) {
 	  $scope.reset = function() {
-		  return {firstname: '',
+		  return {kid: true,
+			  	  firstname: '',
 				  surname: '',
 				  date: new Date(),
 				  parent_firstname: '',
@@ -36,8 +37,10 @@ angular.module('staySafeApp')
 				  q10_k_allergies: false,
 				  q11_k_medication: false,
 				  q12_k_exercise: false,
-				  q13_k_false: false,
-				  q14_additional: '',
+				  q13_k_anyother: false,
+				  q14_k_medication: false,
+				  q15_k_fulldetails: '',
+				  q16_k_additional: '',
 				  secret: ''
 				  };		  
 	  };
@@ -70,6 +73,6 @@ angular.module('staySafeApp')
 		  else {
 			  ParQService.addParQ($scope.parq);
 		  }
-		  $location.path( "#/listParQs" );
+		  $location.path( "/listParQs" );
 	  };
 }]);

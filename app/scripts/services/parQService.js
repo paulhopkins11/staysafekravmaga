@@ -27,7 +27,7 @@ angular.module('staySafeApp').factory(
 					parQService.getParQ = function(firstname, surname) {
 						var parqs = parQService.getParQs();
 						for (var index = 0; index < parqs.length; ++index) {
-						    if (parqs[index].firstname==firstname && parqs[index].surname==surname) {
+						    if (parqs[index].firstname===firstname && parqs[index].surname===surname) {
 						    	return parqs[index];
 						    }
 						}
@@ -36,10 +36,10 @@ angular.module('staySafeApp').factory(
 					parQService.updateParQ = function(parq) {
 						var parqs = parQService.getParQs();
 						for (var index = 0; index < parqs.length; ++index) {
-							if (parqs[index].firstname==parq.firstname && parqs[index].surname==parq.surname) {
+							if (parqs[index].firstname===parq.firstname && parqs[index].surname===parq.surname) {
 								parqs.splice(index, 1);
 								parqs.push(parq);
-								parQService.saveParQs(parqs)
+								parQService.saveParQs(parqs);
 								return;
 							}
 						}

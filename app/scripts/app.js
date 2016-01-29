@@ -23,42 +23,76 @@ var app = angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        controllerAs: 'main',
+        activeTab: 'main'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'about'
+        controllerAs: 'about',
+        activeTab: 'about'
       })
       .when('/listParQs', {
     	  templateUrl: 'views/listParQs.html',
     	  controller: 'ListParQCtrl',
-    	  controllerAs: 'listParQ'
+    	  controllerAs: 'listParQ',
+          activeTab: 'listParQ'
       })
       .when('/adultParQ/:firstname/:surname', {
     	  templateUrl: 'views/adultParQ.html',
     	  controller: 'AdultParQCtrl',
-    	  controllerAs: 'adultParQ'
+    	  controllerAs: 'adultParQ',
+          activeTab: 'adultParQ'
       })
       .when('/adultParQ', {
     	  templateUrl: 'views/adultParQ.html',
     	  controller: 'AdultParQCtrl',
-    	  controllerAs: 'adultParQ'
+    	  controllerAs: 'adultParQ',
+          activeTab: 'adultParQ'
+      })
+      .when('/kidsParQ/:firstname/:surname', {
+    	  templateUrl: 'views/kidsParQ.html',
+    	  controller: 'KidsParQCtrl',
+    	  controllerAs: 'kidsParQ',
+          activeTab: 'kidsParQ'
       })
       .when('/kidsParQ', {
     	  templateUrl: 'views/kidsParQ.html',
     	  controller: 'KidsParQCtrl',
-    	  controllerAs: 'kidsParQ'
+    	  controllerAs: 'kidsParQ',
+          activeTab: 'kidsParQ'
       })
       .when('/config', {
     	  templateUrl: 'views/configuration.html',
     	  controller: 'ConfigurationCtrl',
-    	  controllerAs: 'configuration'
+    	  controllerAs: 'configuration',
+          activeTab: 'configuration'
       })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+    .otherwise({
+    	redirectTo: '/'
+    });
+  })
+  .directive('showErrors', function() {
+	    return {
+	        restrict: 'A',
+	        require:  '^form',
+	        link: function (scope, el, attrs, formCtrl) {
+	          // find the text box element, which has the 'name' attribute
+	          var inputEl   = el[0].querySelector("[name]");
+	          // convert the native text box element to an angular element
+	          var inputNgEl = angular.element(inputEl);
+	          // get the name on the text box so we know the property to check
+	          // on the form controller
+	          var inputName = inputNgEl.attr('name');
+
+	          // only apply the has-error class after the user leaves the text box
+	          inputNgEl.bind('blur', function() {
+	            el.toggleClass('has-error', formCtrl[inputName].$invalid);
+	            //el.toggleClass('has-success', formCtrl[inputName].$valid);
+	          })
+	        }
+	      }
+	    });
 
 app.config(function($httpProvider) {
     //Enable cross domain calls

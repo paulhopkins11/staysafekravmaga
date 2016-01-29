@@ -8,7 +8,7 @@
  * Controller of the staySafeApp
  */
 angular.module('staySafeApp')
-  .controller('ListParQCtrl', ['$scope','ParQService', 'UploadService', function ($scope, ParQService, UploadService) {
+  .controller('ListParQCtrl', ['$scope','$location','ParQService', 'UploadService', function ($scope, $location, ParQService, UploadService) {
 	  $scope.parqs = ParQService.getParQs();
 	  $scope.removeParQ = function(parq) {
 			var index = $scope.parqs.indexOf(parq);
@@ -20,7 +20,15 @@ angular.module('staySafeApp')
 	  $scope.clearUpload = function() {
 		  $scope.uploadFailed = null;
 		  $scope.uploadSuccess = null;		  
-	  }
+	  };
+	  $scope.editParQ = function(parq) {
+		  if (parq.kid) {
+			  $location.path( '/kidsParQ/' + parq.firstname + '/'+ parq.surname );
+		  }
+		  else {
+			  $location.path( '/adultParQ/' + parq.firstname + '/'+ parq.surname);
+		  }
+	  };
 	  $scope.uploadParQ = function(parq) {
 		  $scope.uploading = 'Uploading ' + parq.firstname + ' ' + parq.surname;
 		  UploadService.uploadParQ(parq, function() {

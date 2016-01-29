@@ -49,6 +49,6 @@ angular.module('staySafeApp')
 		  else {
 			  ParQService.addParQ($scope.parq);
 		  }
-		  $location.path( "#/listParQs" );
+		  $location.path( "/listParQs" );
 	  };
   }]);
