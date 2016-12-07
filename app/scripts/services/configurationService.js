@@ -5,9 +5,9 @@ angular.module('staySafeApp').factory('ConfigurationService', [ '$log', 'localSt
 
 	if (!$localStorage.get('configuration')) {
 		$localStorage.set('configuration',{
-				email:'team@staysafekravmaga.com',
-				name:'',
-				phone:'',
+				email:'paul@staysafekravmaga.com',
+				name:'Paul Hopkins',
+				phone:'07982 677717',
 				classlocation:''});
 	}
 

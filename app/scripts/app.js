@@ -45,9 +45,15 @@ var app = angular
           activeTab: 'adultParQ'
       })
       .when('/adultParQ', {
-    	  templateUrl: 'views/adultParQ.html',
-    	  controller: 'AdultParQCtrl',
-    	  controllerAs: 'adultParQ',
+        templateUrl: 'views/adultParQ.html',
+        controller: 'AdultParQCtrl',
+        controllerAs: 'adultParQ',
+          activeTab: 'adultParQ'
+      })
+      .when('/instantAdultParQ', {
+        templateUrl: 'views/instantAdultParQ.html',
+        controller: 'InstantAdultParQCtrl',
+        controllerAs: 'adultParQ',
           activeTab: 'adultParQ'
       })
       .when('/kidsParQ/:firstname/:surname', {
@@ -57,9 +63,15 @@ var app = angular
           activeTab: 'kidsParQ'
       })
       .when('/kidsParQ', {
-    	  templateUrl: 'views/kidsParQ.html',
-    	  controller: 'KidsParQCtrl',
-    	  controllerAs: 'kidsParQ',
+        templateUrl: 'views/kidsParQ.html',
+        controller: 'KidsParQCtrl',
+        controllerAs: 'kidsParQ',
+          activeTab: 'kidsParQ'
+      })
+      .when('/instantKidsParQ', {
+        templateUrl: 'views/instantKidsParQ.html',
+        controller: 'InstantKidsParQCtrl',
+        controllerAs: 'kidsParQ',
           activeTab: 'kidsParQ'
       })
       .when('/config', {
@@ -89,9 +101,9 @@ var app = angular
 	          inputNgEl.bind('blur', function() {
 	            el.toggleClass('has-error', formCtrl[inputName].$invalid);
 	            //el.toggleClass('has-success', formCtrl[inputName].$valid);
-	          })
+	          });
 	        }
-	      }
+	      };
 	    });
 
 app.config(function($httpProvider) {

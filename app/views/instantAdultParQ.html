@@ -1,4 +1,16 @@
 <h1>Adult PAR-Q</h1>
+
+<div class="alert alert-info" role="alert" ng-show="uploading">{{uploading}}</div>
+
+<div class="alert alert-warning alert-dismissible" ng-show="uploadFailed">
+  <button type="button" class="close" ng-click="clearUpload()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Upload failed</strong> {{uploadFailed}}
+</div>
+<div class="alert alert-success alert-dismissible" ng-show="uploadSuccess">
+  <button type="button" class="close" ng-click="clearUpload()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Upload Succeeded</strong> {{uploadSuccess}}
+</div>
+
 <h2>Participant Information</h2>
 <form name="parqform">
 	<div class="form-group" show-errors>
@@ -32,9 +44,9 @@
 			placeholder="Mobile Phone Number" required>
 	</div>
 	<div class="form-group" show-errors>
-		<label for="dob" class="control-label">Date Of Birth (dd/MM/yy)</label> <input type="text"
+		<label for="dob" class="control-label">Date Of Birth (dd/MM/yy) *</label> <input type="text"
 			class="form-control" id="dob" name="dob" ng-model="parq.dob"
-			placeholder="Date of Birth">
+			placeholder="Date of Birth" required>
 	</div>
 	<div class="form-group" show-errors>
 		<label for="email" class="control-label">Email Address *</label> <input
@@ -161,6 +173,18 @@
     <label for="classlocation">Class Location</label>
     <input type="text" class="form-control" id="classlocation" ng-model="settings.classlocation" placeholder="Class Location (eg. Winchester)">
   </div>
+
+  <div class="alert alert-info" role="alert" ng-show="uploading">{{uploading}}</div>
+
+<div class="alert alert-warning alert-dismissible" ng-show="uploadFailed">
+  <button type="button" class="close" ng-click="clearUpload()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Upload failed</strong> {{uploadFailed}}
+</div>
+<div class="alert alert-success alert-dismissible" ng-show="uploadSuccess">
+  <button type="button" class="close" ng-click="clearUpload()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Upload Succeeded</strong> {{uploadSuccess}}
+</div>
+
 	<hr />
-	<button class="btn btn-success btn-sm" type="submit" ng-click="save()" class="btn btn-default" ng-disabled="parqform.$invalid">I {{parq.firstname}} {{parq.surname}} confirm that this information I have given is correct</button>
+	<button class="btn btn-success btn-sm" type="submit" ng-click="uploadParQ()" class="btn btn-default" ng-disabled="parqform.$invalid">I {{parq.firstname}} {{parq.surname}} confirm that this information I have given is correct</button>
 </form>

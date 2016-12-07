@@ -1,0 +1,218 @@
+<h1>Kids PAR-Q</h1>
+
+<div class="alert alert-info" role="alert" ng-show="uploading">{{uploading}}</div>
+
+<div class="alert alert-warning alert-dismissible" ng-show="uploadFailed">
+  <button type="button" class="close" ng-click="clearUpload()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Upload failed</strong> {{uploadFailed}}
+</div>
+<div class="alert alert-success alert-dismissible" ng-show="uploadSuccess">
+  <button type="button" class="close" ng-click="clearUpload()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Upload Succeeded</strong> {{uploadSuccess}}
+</div>
+
+<h2>Student Information</h2>
+<form name="parqform">
+	<div class="form-group" show-errors>
+		<label for="firstName" class="control-label">First Name *</label> <input type="text"
+			class="form-control" id="firstName" name="firstName" ng-model="parq.firstname"
+			placeholder="First Name" required>
+	</div>
+	<div class="form-group" show-errors>
+		<label for="surname" class="control-label">Surname *</label> <input type="text"
+			class="form-control" id="surname" name="surname" ng-model="parq.surname"
+			placeholder="Surname" required>
+	</div>
+	<div class="form-group" show-errors>
+		<label for="dob" class="control-label">Date Of Birth (dd/MM/yy) *</label> <input type="text"
+			class="form-control" id="dob" name="dob" ng-model="parq.dob"
+			placeholder="Date of Birth" required>
+	</div>
+<h2>Parent or Guardian Information</h2>
+	<div class="form-group" show-errors>
+		<label for="parent_firstName" class="control-label">First Name *</label> <input type="text"
+			class="form-control" id="parent_firstName" name="parent_firstName" ng-model="parq.parent_firstname"
+			placeholder="First Name" required>
+	</div>
+	<div class="form-group" show-errors>
+		<label for="parent_surname" class="control-label">Surname *</label> <input type="text"
+			class="form-control" id="parent_surname" name="parent_surname" ng-model="parq.parent_surname"
+			placeholder="Surname" required>
+	</div>
+	<div class="form-group" show-errors>
+		<label for="address" class="control-label">Address</label> <input type="text"
+			class="form-control" id="address" name="address" ng-model="parq.address"
+			placeholder="Address">
+	</div>
+	<div class="form-group" show-errors>
+		<label for="postcode" class="control-label">Postcode</label> <input type="text"
+			class="form-control" id="postcode" name="postcode" ng-model="parq.postcode"
+			placeholder="Postcode">
+	</div>
+	<div class="form-group" show-errors>
+		<label for="homephone" class="control-label">Home Phone Number</label> <input type="text"
+			class="form-control" id="homephone" name="homephone" ng-model="parq.homephone"
+			placeholder="Home Phone Number">
+	</div>
+	<div class="form-group" show-errors>
+		<label for="mobilephone" class="control-label">Mobile Phone Number *</label> <input type="text"
+			class="form-control" id="mobilephone" name="mobilephone" ng-model="parq.mobilephone"
+			placeholder="Mobile Phone Number" required>
+	</div>
+	<div class="form-group" show-errors>
+		<label for="email" class="control-label">Email Address *</label> <input
+			type="email" class="form-control" id="email" name="email"
+			ng-model="parq.email" placeholder="Email" required>
+	</div>
+	<div class="form-group" show-errors>
+		<label for="emergencycontact" class="control-label">Emergency Contact Name (if different)</label> <input
+			type="text" class="form-control" id="emergencycontact" name="emergencycontact"
+			ng-model="parq.emergencycontact" placeholder="">
+	</div>
+	<div class="form-group" show-errors>
+		<label for="emergencynumber" class="control-label">Emergency Contact Number (if different)</label> <input
+			type="text" class="form-control" id="emergencynumber" name="emergencynumber"
+			ng-model="parq.emergencynumber" placeholder="">
+	</div>
+	<div class="form-group" show-errors>
+		<label for="howhear" class="control-label">How did you hear about us</label> <input
+			type="text" class="form-control" id="howhear" name="howhear" ng-model="parq.howhear"
+			placeholder="">
+	</div>
+	<hr />
+	<h2>Physical Activity Readiness Questionnaire</h2>
+
+	<h4>Please be aware that all information on completed forms will
+		be confidential</h4>
+
+	<h4>Does your child have or has he or she ever experienced any of the following?.</h4>
+
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q1_k_blood">
+			High or Low Blood Pressure?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q2_k_cholesterol">
+			Elevated blood cholesterol?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q3_k_diabetes">
+			Diabetes?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q4_k_chest">
+			Chest pains brought on by physical exertion?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q5_k_epilepsy">
+			Childhood epilepsy?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q6_k_dizzy">
+			Dizziness or fainting?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q7_k_arthritis">
+			A bone, joint or muscular problems associated with arthritis?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q8_k_asthma">
+			Asthma or respiratory Problems?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q9_k_sustained">
+			Any sustained injuries or illness?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q10_k_allergies">
+			Any allergies?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q11_k_medication">
+			Is your child taking any medication?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q12_k_exercise">
+			Has your doctor ever advised your child not to exercise?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q13_k_anyother">
+			Is there any reason not mentioned above why any type or physical activity may not be suitable for your child?</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-model="parq.q14_k_medication">
+			If your child has emergency medication do they know and are they capable of administering it?</label>
+	</div>
+	<div class="form-group">
+        <label for="fulldetails" class="control-label">If answered 'YES' to any of the above questions please give full details here?</label> 
+        <input type="text" class="form-control" id="fulldetails" ng-model="parq.q15_k_fulldetails"
+            placeholder="">
+    </div>
+	<div class="form-group">
+        <label for="additional" class="control-label">Is there any additional information the instructor should be aware of?</label> 
+        <input type="text" class="form-control" id="additional" ng-model="parq.q16_k_additional"
+            placeholder="">
+    </div>
+
+	<hr />
+
+
+	<h4>In signing this form, I the parent/guardian of the aforementioned child, affirm that I 
+	have read this form in its entirety and I have answered the questions accurately and to the 
+	best of my knowledge. I understand that my child is responsible for monitoring him or herself 
+	throughout any activity, and should any unusual symptoms occur, my child understands the 
+	importance of informing the Instructor immediately.</h4>
+	
+	<h4>In the event that medical clearance must be obtained before my child's participation in an 
+	exercise session, I agree to contact the GP and obtain written permission prior to the commencement of the 
+	exercise activity, and that the permission be given to the instructor.</h4> 
+	
+	<h4>I understand that if my 
+	child fails to behave in a manner that is polite and social, he or she could be suspended from that particular activity.</h4>
+	
+	<hr />
+	<h2>Signature</h2>
+
+	<h4>Please enter a secret word that will be able to confirm that
+		it was you that answered these questions, for example your mothers maiden name. This will not be displayed.
+		</h4>
+
+	<div class="form-group" show-errors>
+		<label for="secret" class="control-label">Secret Word *</label> <input type="password"
+			class="form-control" id="secret" name="secret" ng-model="parq.secret"
+			placeholder="" required>
+	</div>
+	<hr />
+
+  <div class="form-group">
+    <label for="name">Instructor Name</label>
+    <input type="text" class="form-control" id="name" ng-model="settings.name" placeholder="Instructor Name">
+  </div>
+  <div class="form-group">
+    <label for="email">Instructor Email address</label>
+    <input type="email" class="form-control" id="email" ng-model="settings.email" placeholder="Email" value="paul@staysafekravmaga.com">
+  </div>
+  <div class="form-group">
+    <label for="phone">Instructor Phone Number</label>
+    <input type="text" class="form-control" id="phone" ng-model="settings.phone" placeholder="Mobile Number" value="07982 677717">
+  </div>
+  <div class="form-group">
+    <label for="classlocation">Class Location</label>
+    <input type="text" class="form-control" id="classlocation" ng-model="settings.classlocation" placeholder="Class Location (eg. Winchester)">
+  </div>
+
+<div class="alert alert-info" role="alert" ng-show="uploading">{{uploading}}</div>
+
+<div class="alert alert-warning alert-dismissible" ng-show="uploadFailed">
+  <button type="button" class="close" ng-click="clearUpload()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Upload failed</strong> {{uploadFailed}}
+</div>
+<div class="alert alert-success alert-dismissible" ng-show="uploadSuccess">
+  <button type="button" class="close" ng-click="clearUpload()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Upload Succeeded</strong> {{uploadSuccess}}
+</div>
+
+	<hr />
+
+	<button class="btn btn-success btn-sm" type="submit" ng-click="uploadParQ()" class="btn btn-default" ng-disabled="parqform.$invalid">I {{parq.parent_firstname}} {{parq.parent_surname}} confirm that this information I have given is correct</button>
+</form>
